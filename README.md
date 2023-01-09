@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é um projeto [Next.js](https://nextjs.org/) inicializado com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Teste Prático Landing Page youcom
 
-First, run the development server:
+Caso queira testar o servidor de desenvolvimento, execute o seguinte comando no terminal:
 
 ```bash
 npm run dev
-# or
-yarn dev
+```
+Caso queira testar o servidor de produção, execute os seguintes comandos no terminal:
+
+```bash
+npm run build
+
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Requisitos funcionais
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Todos os requisitos funcionais solicitados foram implementados, é consumido um total de 100 produtos da API pública “DummyJSON”, utilizando a seguinte URL: '[https://dummyjson.com/products?limit=100](https://dummyjson.com/products?limit=100)' é passado o parâmetro *limit=100* para limitar a uma quantidade maior que a padrão da API de 30 produtos.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Os produtos mostrados na *landing page* estão limitados somente para artigos de vestuário, calçados e acessórios de moda, como solicitado. Após é realizado a verificação de estoque para mostrar somente produtos com uma quantia igual ou superior a 10 em estoque.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+A validação de descontos também está funcional, todos os produtos que possuem desconto são calculados e renderizados em suas respectivas *product box*, artigos de calçados possuem uma validação extra para serem calculados somente se o desconto for de até 15%, caso o desconto seja superior, é mostrado somente o valor de lista do produto.
 
-## Learn More
+Existe um botão em formato de coração em cada *product box*, o qual serve para adicionar os produtos como favorito. A ideia inicial era utilizar o *sessionStorage* em conjunto para salvar os dados de quais produtos foram adicionados como favorito, para quando a página fosse recarregada esses produtos renderizassem com o botão preenchido, sinalizando que aquele produto já estava adicionado como favorito e vice e versa, porém, houveram alguns erros durante a implementação e utilização do *sessionStorage*, fazendo com que o botão funcione somente indicando que o produto está adicionado como favorito até que a página seja recarregada.
 
-To learn more about Next.js, take a look at the following resources:
+## Requisitos não funcionais
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Como descrito anteriormente, não foi finalizado 100% da implementação do *sessionStorage*, foi possível criar dois ganchos para a utilização do mesmo (*getSessionStorage.ts* e *setSessionStorage.ts*), mas durante os testes o funcionamento dos dois ganchos não se mostrou totalmente funcional como o esperado.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Também foi definido o SSG do nextJs para 30 segundos de revalidação, porém, ao testar a funcionalidade no servidor de produção da aplicação a mesma não está funcional, a página continua recarregando os dados a cada *reload* e não a cada 30 segundos conforme definido.
