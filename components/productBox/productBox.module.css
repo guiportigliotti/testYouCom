@@ -1,0 +1,79 @@
+.container {
+    margin: auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.polaroid {
+    position: relative;
+    background: white;
+    padding: 15px;
+}
+
+.image {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+}
+
+.productInfosSection {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 10px 0px 0px;
+    line-height: 18.2px;
+}
+
+.productInfosSub {
+    text-align: center;
+}
+
+.productPricesSection {
+    font-size: 14px;
+    line-height: 19.5px;
+    color: rgb(0, 0, 0);
+    margin: 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.productPrice{
+    font-size: 14px;
+    line-height: 19.5px;
+    color: rgb(0, 0, 0);
+}
+
+.productSalePrice {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.oldPrice {
+    font-weight: normal;
+    text-decoration: line-through;
+    font-size: 13px !important;
+}
+
+.discountable {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.divFavoriteIcon {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}

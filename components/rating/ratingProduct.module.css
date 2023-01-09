@@ -1,0 +1,35 @@
+.container { 
+    flex: 1;
+    background-color: white; 
+    justify-content: center; 
+    text-align: center;
+}
+
+.marginTop {
+    margin-top: 15px;
+}
+
+.textStyle { 
+    text-align: center;
+    font-size: 23;
+    color: #000;
+    margin-top: 15px; 
+}
+
+.buttonStyle { 
+    justify-content: center; 
+    flex-direction: row;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #8ad24e;
+}
+
+.buttonTextStyle { 
+    color: #fff; 
+    text-align: center; 
+}
+
+.ratingBarStyle { 
+    justify-content: center;
+    flex-direction: row;
+}

@@ -1,0 +1,8 @@
+.wishList {
+    font-size: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 20px;
+    background-color: transparent;
+}
